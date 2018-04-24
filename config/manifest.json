@@ -1,0 +1,21 @@
+{
+    "server": {
+        "port": "8000"
+    },
+    "register": {
+        "plugins": [
+            {
+                "plugin": "blipp"
+            },
+            {
+                "plugin": "inert"
+            },
+            {
+                "plugin": "vision"
+            },
+            {
+                "plugin": "./ColorController"
+            }
+        ]
+    }
+}
