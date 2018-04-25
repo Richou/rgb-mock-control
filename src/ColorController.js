@@ -7,10 +7,24 @@ exports.register = function(server, options) {
             path: '/color',
             config: {auth: false},
             handler: (request, reply) => {
-                console.log('Incoming Request')
-                console.log(request.query)
+                const red = request.query.red
+                const green = request.query.green
+                const blue = request.query.blue
+                if (red === null || red === undefined || green === null || green === undefined || blue === null || blue === undefined ) {
+                    return reply.response({"message": "All parameters [red, blue, green] must be defined"}).code(400)
+                }
+                
                 return reply.response({}).code(200)
             }
+        })
+
+        server.route({
+            method: 'GET',
+            path: '/reset-settings',
+            config: {auth: false},
+            handler: (request, reply) => {
+                return reply.response({}).code(200)
+            } 
         })
     });
 };
