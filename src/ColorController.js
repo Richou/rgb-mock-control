@@ -7,6 +7,8 @@ exports.register = function(server, options) {
             path: '/color',
             config: {auth: false},
             handler: (request, reply) => {
+                console.log('Incoming Request')
+                console.log(request.query)
                 return reply.response({}).code(200)
             }
         })
