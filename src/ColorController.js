@@ -10,6 +10,7 @@ exports.register = function(server, options) {
                 const red = request.query.red
                 const green = request.query.green
                 const blue = request.query.blue
+                console.log(request.query)
                 if (red === null || red === undefined || green === null || green === undefined || blue === null || blue === undefined ) {
                     return reply.response({"message": "All parameters [red, blue, green] must be defined"}).code(400)
                 }
